@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Заголовок в стиле макета: квадратная кнопка "назад" + заголовок/подзаголовок -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="20dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_button"
+                android:padding="9dp"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/content_desc_back" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="?attr/colorOnSurface"
+                    tools:text="@string/title_add_bill" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subtitle_add_bill"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_secondary_light" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Тип услуги -->
+        <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:text="@string/label_utility_type"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_utility_type"
+            style="@style/Widget.Komunalka.InputField.ExposedDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_utility_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Период -->
+        <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:layout_marginTop="16dp" android:text="@string/label_period"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_period"
+            style="@style/Widget.Komunalka.InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Сентябрь 2026"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Показания -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:orientation="vertical">
+                <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:text="@string/label_previous_reading"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_previous_reading"
+                    style="@style/Widget.Komunalka.InputField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_previous_reading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:orientation="vertical">
+                <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:text="@string/label_current_reading"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_current_reading"
+                    style="@style/Widget.Komunalka.InputField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_current_reading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="0"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ===== Изюминка: фото счётчика со сканированием и обрезкой ===== -->
+        <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:layout_marginTop="16dp" android:text="@string/label_meter_photo"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan_meter"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingVertical="13dp"
+            android:text="@string/action_scan_meter"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_camera"
+            app:iconGravity="textStart"
+            app:iconTint="@color/orange_500"
+            app:cornerRadius="14dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/orange_500"
+            android:textColor="@color/orange_500" />
+
+        <ImageView
+            android:id="@+id/iv_meter_photo"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_rounded_card"
+            android:visibility="gone"
+            android:contentDescription="@string/content_desc_photo"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/photo_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_dashed_placeholder">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📷"
+                android:textSize="26sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/photo_placeholder_text"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary_light" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_scan_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary_light"
+            android:visibility="gone"
+            tools:text="@string/scan_hint"
+            tools:visibility="visible" />
+
+        <!-- Сумма (крупно, акцентным цветом — как в макете) -->
+        <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:layout_marginTop="16dp" android:text="@string/label_amount"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_amount"
+            style="@style/Widget.Komunalka.InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="0.00"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/orange_500" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Срок оплаты -->
+        <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:layout_marginTop="16dp" android:text="@string/label_due_date"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_due_date"
+            style="@style/Widget.Komunalka.InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_forecast">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_due_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Комментарий -->
+        <TextView style="@style/TextAppearance.Komunalka.FieldLabel" android:layout_marginTop="16dp" android:text="@string/label_comment"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_comment"
+            style="@style/Widget.Komunalka.InputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:hint="Добавьте заметку..."
+                android:gravity="top" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:paddingVertical="13dp"
+                app:cornerRadius="14dp"
+                android:textAllCaps="false"
+                android:text="@string/action_cancel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:paddingVertical="13dp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:text="@string/action_save" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Komunalka" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/orange_500</item>
+        <item name="colorPrimaryDark">@color/orange_700</item>
+        <item name="colorAccent">@color/orange_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/orange_500</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorOnBackground">@color/text_primary_light</item>
+        <item name="colorOnSurface">@color/text_primary_light</item>
+
+        <item name="android:statusBarColor">@color/background_light</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:navigationBarColor">@color/surface_light</item>
+
+        <item name="materialButtonStyle">@style/Widget.Komunalka.Button</item>
+        <item name="bottomNavigationStyle">@style/Widget.Komunalka.BottomNav</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Widget.Komunalka.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/orange_500</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="Widget.Komunalka.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_color</item>
+        <item name="itemTextColor">@color/bottom_nav_color</item>
+        <item name="android:background">@color/surface_light</item>
+        <item name="elevation">8dp</item>
+    </style>
+
+    <style name="TextAppearance.Komunalka.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Komunalka.Body" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/text_secondary_light</item>
+    </style>
+
+    <style name="Chip.Paid" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/success_green_bg</item>
+        <item name="android:textColor">@color/success_green</item>
+        <item name="checkable">false</item>
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconEnabled">false</item>
+    </style>
+
+    <style name="Chip.Unpaid" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/orange_100</item>
+        <item name="android:textColor">@color/orange_700</item>
+        <item name="checkable">false</item>
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconEnabled">false</item>
+    </style>
+
+    <style name="Chip.Overdue" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/warning_amber_bg</item>
+        <item name="android:textColor">@color/warning_amber</item>
+        <item name="checkable">false</item>
+        <item name="chipIconVisible">false</item>
+        <item name="closeIconEnabled">false</item>
+    </style>
+
+    <!-- Пилюли-фильтры: сплошные оранжевые в выбранном состоянии, как в дизайне Figma -->
+    <style name="Chip.Filter" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_bg</item>
+        <item name="chipStrokeColor">@color/chip_stroke</item>
+        <item name="chipStrokeWidth">1.5dp</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipCornerRadius">20dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Komunalka.ChipLabel</item>
+    </style>
+
+    <style name="TextAppearance.Komunalka.ChipLabel" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- FAB со скруглённым квадратом (18dp), как в дизайне, вместо стандартного круга -->
+    <style name="ShapeAppearance.Komunalka.Fab" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <style name="TextAppearance.Komunalka.SectionHeader" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/text_primary_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <!-- Подписи над полями форм — как "label" в макете Figma -->
+    <style name="TextAppearance.Komunalka.FieldLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_secondary_light</item>
+    </style>
+
+    <!-- Заголовки секций настроек: КАПС + разрядка, как в макете -->
+    <style name="TextAppearance.Komunalka.SectionLabel" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_secondary_light</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <!-- Поля ввода: скруглённая обводка 12dp, как input-field в макете -->
+    <style name="Widget.Komunalka.InputField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/orange_500</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="Widget.Komunalka.InputField.ExposedDropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxStrokeColor">@color/orange_500</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+</resources>

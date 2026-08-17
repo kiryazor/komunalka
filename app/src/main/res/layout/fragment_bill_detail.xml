@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_icon_button"
+                android:padding="9dp"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/content_desc_back" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="@string/title_bill_detail"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnSurface" />
+
+            <ImageButton
+                android:id="@+id/btn_edit"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_edit"
+                android:contentDescription="@string/action_edit" />
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_delete"
+                android:contentDescription="@string/action_delete" />
+        </LinearLayout>
+
+        <!-- ===== Градиентная hero-карточка (как в макете) ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_hero_gradient"
+            android:padding="28dp"
+            android:layout_marginBottom="14dp">
+
+            <TextView
+                android:id="@+id/tv_utility_letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="40sp"
+                tools:text="⚡" />
+
+            <TextView
+                android:id="@+id/tv_apartment_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#CCFFFFFF"
+                tools:text="Электричество · Сентябрь 2026" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textStyle="bold"
+                android:textSize="38sp"
+                android:textColor="@color/white"
+                tools:text="1 250 ₽" />
+
+            <TextView
+                android:id="@+id/chip_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_status_pill_on_gradient"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="6dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:text="⏳ Ожидает оплаты" />
+        </LinearLayout>
+
+        <!-- Показания: 3 колонки, как в макете -->
+        <LinearLayout
+            android:id="@+id/card_readings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_readings_title"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary_light"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView android:id="@+id/tv_reading_prev" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textStyle="bold" android:textSize="20sp" android:textColor="?attr/colorOnSurface" tools:text="120" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/label_previous_short" android:textSize="11sp" android:textStyle="bold"
+                        android:gravity="center" android:textColor="@color/text_secondary_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView android:id="@+id/tv_reading_cur" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textStyle="bold" android:textSize="20sp" android:textColor="?attr/colorOnSurface" tools:text="145" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/label_current_short" android:textSize="11sp" android:textStyle="bold"
+                        android:gravity="center" android:textColor="@color/text_secondary_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView android:id="@+id/tv_reading_delta" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textStyle="bold" android:textSize="20sp" android:textColor="@color/orange_500" tools:text="25" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp"
+                        android:text="@string/label_consumption_short" android:textSize="11sp" android:textStyle="bold"
+                        android:gravity="center" android:textColor="@color/text_secondary_light" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Фото счётчика -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/iv_meter_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_rounded_card"
+                android:visibility="gone"
+                android:contentDescription="@string/content_desc_photo"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/photo_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_photo_empty">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📷" android:textSize="30sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/no_meter_photo"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange_700" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Срок оплаты + комментарий -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_due_date"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_secondary_light" />
+                <TextView
+                    android:id="@+id/tv_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface"
+                    tools:text="25.09.2026" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_comment"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/divider_light"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_comment_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_comment"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary_light"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
+                android:visibility="gone"
+                tools:text="Установили кондиционер, расход вырос"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <!-- История платежей -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/label_payments_history"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="?attr/colorOnSurface" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_payment"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_add_payment"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/orange_500" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_empty_payments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:background="@drawable/bg_rounded_card"
+            android:text="@string/empty_payments"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary_light" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:layout_marginBottom="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_payments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_payment" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_remaining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_secondary_light"
+            tools:text="Осталось оплатить: 1 250 ₽" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_toggle_paid"
+            style="@style/Widget.Komunalka.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:paddingVertical="14dp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            tools:text="Отметить как оплаченный" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

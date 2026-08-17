@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/billsListFragment">
+
+    <fragment
+        android:id="@+id/billsListFragment"
+        android:name="com.example.komunalka.ui.bills.BillsListFragment"
+        android:label="@string/nav_bills">
+        <action
+            android:id="@+id/action_billsList_to_addEdit"
+            app:destination="@id/addEditBillFragment" />
+        <action
+            android:id="@+id/action_billsList_to_detail"
+            app:destination="@id/billDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditBillFragment"
+        android:name="com.example.komunalka.ui.addedit.AddEditBillFragment"
+        android:label="@string/title_add_bill">
+        <argument android:name="billId" app:argType="long" android:defaultValue="-1L" />
+        <argument android:name="apartmentId" app:argType="long" android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/billDetailFragment"
+        android:name="com.example.komunalka.ui.detail.BillDetailFragment"
+        android:label="@string/title_bill_detail">
+        <argument android:name="billId" app:argType="long" />
+        <action
+            android:id="@+id/action_detail_to_addEdit"
+            app:destination="@id/addEditBillFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.komunalka.ui.statistics.StatisticsFragment"
+        android:label="@string/nav_statistics" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.komunalka.ui.settings.SettingsFragment"
+        android:label="@string/nav_settings" />
+
+</navigation>

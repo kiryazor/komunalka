@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Коммуналка</string>
+
+    <!-- Нижняя навигация -->
+    <string name="nav_bills">Счета</string>
+    <string name="nav_statistics">Статистика</string>
+    <string name="nav_settings">Настройки</string>
+
+    <!-- Экран списка счетов -->
+    <string name="hint_search">Поиск по услугам…</string>
+    <string name="label_apartment">Квартира</string>
+    <string name="caption_app_tagline">Коммунальные платежи</string>
+    <string name="hero_unpaid_title">К оплате сейчас</string>
+    <string name="hero_unpaid_bills_count">%1$d счёт(а) ожидают оплаты</string>
+    <string name="section_all_bills">Все счета</string>
+    <string name="section_paid_bills">Оплаченные</string>
+    <string name="section_unpaid_bills">К оплате</string>
+    <string name="action_manage_apartments">Управлять квартирами</string>
+    <string name="empty_bills_title">Пока нет счетов</string>
+    <string name="empty_bills_subtitle">Добавьте первый счёт для этой квартиры,\nнажав на кнопку «+»</string>
+    <string name="filter_all">Все</string>
+    <string name="filter_paid">Оплаченные</string>
+    <string name="filter_unpaid">Неоплаченные</string>
+    <string name="sort_by">Сортировка</string>
+    <string name="sort_date">По дате</string>
+    <string name="sort_amount">По сумме</string>
+    <string name="sort_name">По названию услуги</string>
+    <string name="total_for_period">Итого к оплате</string>
+
+    <!-- Добавление/редактирование -->
+    <string name="title_add_bill">Новый счёт</string>
+    <string name="subtitle_add_bill">Введите данные показаний</string>
+    <string name="title_edit_bill">Редактирование счёта</string>
+    <string name="label_utility_type">Тип услуги</string>
+    <string name="label_period">Период (например 2026-09)</string>
+    <string name="label_previous_reading">Предыдущее показание</string>
+    <string name="label_current_reading">Текущее показание</string>
+    <string name="label_amount">Сумма, ₽</string>
+    <string name="label_due_date">Срок оплаты</string>
+    <string name="label_comment">Комментарий (необязательно)</string>
+    <string name="action_scan_meter">Сканировать счётчик</string>
+    <string name="crop_meter_title">Выделите табло счётчика</string>
+    <string name="label_meter_photo">Фото счётчика</string>
+    <string name="photo_placeholder_text">Фото появится здесь</string>
+    <string name="action_save">Сохранить</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_pick_date">Выбрать дату</string>
+    <string name="error_field_required">Заполните поле</string>
+    <string name="error_amount_invalid">Введите корректную сумму</string>
+    <string name="scan_hint">Наведите камеру на табло счётчика и сфотографируйте цифры. Для лучшего результата снимайте без бликов и ровно.</string>
+    <string name="scan_recognized">Распознано: %1$s. Проверьте и при необходимости исправьте.</string>
+    <string name="scan_not_recognized">Не удалось распознать цифры. Введите показание вручную.</string>
+    <string name="scan_camera_denied">Нет доступа к камере. Разрешите доступ в настройках телефона.</string>
+
+    <!-- Детальный экран -->
+    <string name="title_bill_detail">Детали счёта</string>
+    <string name="action_edit">Редактировать</string>
+    <string name="action_delete">Удалить</string>
+    <string name="confirm_delete_title">Удалить счёт?</string>
+    <string name="confirm_delete_message">Вы уверены, что хотите удалить этот счёт? Это действие нельзя отменить.</string>
+    <string name="status_paid">Оплачено</string>
+    <string name="status_unpaid">Не оплачено</string>
+    <string name="status_overdue">Просрочено</string>
+    <string name="status_pill_paid">✓ Оплачено</string>
+    <string name="status_pill_unpaid">⏳ Ожидает оплаты</string>
+    <string name="status_pill_overdue">⚠️ Просрочено</string>
+    <string name="label_readings_title">Показания счётчика</string>
+    <string name="label_previous_short">Предыдущее</string>
+    <string name="label_current_short">Текущее</string>
+    <string name="label_consumption_short">Расход</string>
+    <string name="no_meter_photo">Нет фото счётчика</string>
+    <string name="action_mark_paid">Отметить как оплаченный</string>
+    <string name="action_unmark_paid">Отменить оплату</string>
+    <string name="label_payments_history">История платежей</string>
+    <string name="action_add_payment">Добавить платёж</string>
+    <string name="empty_payments">Платежей пока нет</string>
+    <string name="label_payment_amount">Сумма платежа, ₽</string>
+    <string name="label_payment_method">Способ оплаты</string>
+    <string name="method_card">Карта</string>
+    <string name="method_cash">Наличные</string>
+    <string name="method_online">Онлайн-платёж</string>
+    <string name="remaining_to_pay">Осталось оплатить: %1$s ₽</string>
+    <string name="fully_paid">Счёт полностью оплачен</string>
+
+    <!-- Статистика -->
+    <string name="title_statistics">Статистика</string>
+    <string name="stat_total_this_month">Расходы за текущий месяц</string>
+    <string name="stat_by_utility">Расходы по типам услуг</string>
+    <string name="stat_monthly_dynamics">Динамика по месяцам</string>
+    <string name="stat_forecast_title">Прогноз на следующий месяц</string>
+    <string name="stat_forecast_short">Прогноз</string>
+    <string name="stat_forecast_hint">Рассчитано по среднему за последние месяцы</string>
+    <string name="stat_forecast_value">≈ %1$s ₽ (по среднему за последние месяцы)</string>
+    <string name="stat_no_data">Недостаточно данных для статистики.\nДобавьте несколько счетов.</string>
+    <string name="stat_avg_bill">Средний счёт</string>
+    <string name="stat_total_paid">Оплачено всего</string>
+    <string name="stat_total_unpaid">Долг</string>
+
+    <!-- Настройки -->
+    <string name="title_settings">Настройки</string>
+    <string name="settings_theme">Тема оформления</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="theme_system">Как в системе</string>
+    <string name="theme_on">Включена</string>
+    <string name="theme_off">Выключена</string>
+    <string name="settings_default_sort">Сортировка по умолчанию</string>
+    <string name="settings_units">Единицы измерения воды</string>
+    <string name="units_liters">Литры</string>
+    <string name="units_cubic_meters">Кубометры</string>
+    <string name="settings_apartments">Мои квартиры</string>
+    <string name="settings_utility_types">Типы услуг и тарифы</string>
+    <string name="action_add">Добавить</string>
+    <string name="action_add_pill">+ Добавить</string>
+    <string name="section_appearance">Оформление</string>
+    <string name="label_apartment_name">Название квартиры</string>
+    <string name="label_apartment_address">Адрес</string>
+    <string name="label_apartment_area">Площадь, м²</string>
+    <string name="action_delete_apartment">Удалить квартиру</string>
+    <string name="confirm_delete_apartment_message">Все счета этой квартиры также будут удалены. Продолжить?</string>
+    <string name="settings_about">О приложении</string>
+    <string name="settings_version">Версия 1.0</string>
+
+    <!-- Общее -->
+    <string name="ok">ОК</string>
+    <string name="close">Закрыть</string>
+    <string name="loading">Загрузка…</string>
+    <string name="content_desc_photo">Фото показаний счётчика</string>
+    <string name="content_desc_back">Назад</string>
+</resources>

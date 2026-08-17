@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_settings"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Оформление -->
+        <TextView style="@style/TextAppearance.Komunalka.SectionLabel" android:text="@string/section_appearance"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:padding="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tv_theme_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="☀️"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_theme"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:id="@+id/tv_theme_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_secondary_light"
+                    tools:text="Выключена" />
+            </LinearLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_dark_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:thumbTint="@color/white"
+                app:trackTint="@color/switch_track" />
+        </LinearLayout>
+
+        <!-- Сортировка по умолчанию -->
+        <TextView style="@style/TextAppearance.Komunalka.SectionLabel" android:text="@string/settings_default_sort"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <RadioGroup
+                android:id="@+id/radio_sort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+                <RadioButton android:id="@+id/radio_sort_date" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/sort_date" android:buttonTint="@color/orange_500"/>
+                <RadioButton android:id="@+id/radio_sort_amount" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/sort_amount" android:buttonTint="@color/orange_500"/>
+                <RadioButton android:id="@+id/radio_sort_name" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/sort_name" android:buttonTint="@color/orange_500"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Единицы измерения воды -->
+        <TextView style="@style/TextAppearance.Komunalka.SectionLabel" android:text="@string/settings_units"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:id="@+id/row_units_cubic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground"
+                android:padding="14dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/units_cubic_meters" android:textSize="15sp" android:textColor="?attr/colorOnSurface"/>
+                <ImageView android:id="@+id/iv_check_cubic" android:layout_width="18dp" android:layout_height="18dp"
+                    android:src="@drawable/ic_check" android:visibility="gone" android:contentDescription="@null"/>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_light"/>
+
+            <LinearLayout
+                android:id="@+id/row_units_liters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="?attr/selectableItemBackground"
+                android:padding="14dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/units_liters" android:textSize="15sp" android:textColor="?attr/colorOnSurface"/>
+                <ImageView android:id="@+id/iv_check_liters" android:layout_width="18dp" android:layout_height="18dp"
+                    android:src="@drawable/ic_check" android:visibility="gone" android:contentDescription="@null"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Квартиры -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                style="@style/TextAppearance.Komunalka.SectionLabel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/settings_apartments"/>
+            <TextView
+                android:id="@+id/btn_add_apartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_add_pill"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="@string/action_add_pill"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/orange_500" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_apartments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_settings_row" />
+        </LinearLayout>
+
+        <!-- Типы услуг -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                style="@style/TextAppearance.Komunalka.SectionLabel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/settings_utility_types"/>
+            <TextView
+                android:id="@+id/btn_add_utility_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_add_pill"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="@string/action_add_pill"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/orange_500" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_rounded_card"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_utility_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextAppearance.Komunalka.SectionLabel"
+            android:text="@string/settings_about"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/settings_version"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary_light" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Многие макеты по всему приложению ссылаются напрямую на цвета с
+        суффиксом "_light" (например @color/text_secondary_light), а не
+        на тематические атрибуты. Чтобы не переписывать каждый layout,
+        переопределяем здесь те же самые имена ресурсов тёмными значениями —
+        Android автоматически подставит их в ночной теме везде, где бы
+        имя ни встречалось (в стилях, в drawable, в layout).
+    -->
+    <color name="background_light">#1E1510</color>
+    <color name="surface_light">#2A1E17</color>
+    <color name="surface_alt_light">#3D2517</color>
+    <color name="text_primary_light">#F5EDE8</color>
+    <color name="text_secondary_light">#9E8C82</color>
+    <color name="divider_light">#3D2E25</color>
+</resources>
