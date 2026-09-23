@@ -50,7 +50,7 @@
     <style name="Chip.Paid" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipBackgroundColor">@color/success_green_bg</item>
         <item name="android:textColor">@color/success_green</item>
-        <item name="checkable">false</item>
+        <item name="android:checkable">false</item>
         <item name="chipIconVisible">false</item>
         <item name="closeIconEnabled">false</item>
     </style>
@@ -58,7 +58,7 @@
     <style name="Chip.Unpaid" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipBackgroundColor">@color/orange_100</item>
         <item name="android:textColor">@color/orange_700</item>
-        <item name="checkable">false</item>
+        <item name="android:checkable">false</item>
         <item name="chipIconVisible">false</item>
         <item name="closeIconEnabled">false</item>
     </style>
@@ -66,7 +66,7 @@
     <style name="Chip.Overdue" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipBackgroundColor">@color/warning_amber_bg</item>
         <item name="android:textColor">@color/warning_amber</item>
-        <item name="checkable">false</item>
+        <item name="android:checkable">false</item>
         <item name="chipIconVisible">false</item>
         <item name="closeIconEnabled">false</item>
     </style>
