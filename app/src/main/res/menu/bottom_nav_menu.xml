@@ -8,8 +8,5 @@
         android:id="@+id/statisticsFragment"
         android:icon="@drawable/ic_chart"
         android:title="@string/nav_statistics" />
-    <item
-        android:id="@+id/settingsFragment"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/nav_settings" />
+    <!-- TODO: экран настроек в разработке, пункт временно скрыт -->
 </menu>

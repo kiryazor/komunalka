@@ -27,11 +27,9 @@ class BillsListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var apartmentsList: List<Apartment> = emptyList()
-    private val adapter = BillsAdapter { item ->
-        findNavController().navigate(
-            R.id.action_billsList_to_detail,
-            bundleOf("billId" to item.bill.id)
-        )
+    private val adapter = BillsAdapter { _ ->
+        // TODO: экран деталей счёта пока в разработке
+        android.widget.Toast.makeText(requireContext(), "Экран в разработке", android.widget.Toast.LENGTH_SHORT).show()
     }
 
     private val viewModel: BillsViewModel by viewModels {
@@ -53,11 +51,8 @@ class BillsListFragment : Fragment() {
         binding.rvBills.adapter = adapter
 
         binding.fabAdd.setOnClickListener {
-            val apartmentId = viewModel.currentApartmentId.value
-            findNavController().navigate(
-                R.id.action_billsList_to_addEdit,
-                bundleOf("billId" to -1L, "apartmentId" to apartmentId)
-            )
+            // TODO: экран добавления счёта пока в разработке
+            android.widget.Toast.makeText(requireContext(), "Экран в разработке", android.widget.Toast.LENGTH_SHORT).show()
         }
 
         binding.etSearch.addTextChangedListener { text ->
